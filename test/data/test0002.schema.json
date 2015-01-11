@@ -1,0 +1,16 @@
+{
+    "properties": {
+        "a": {
+        },
+        "b": {
+            "type" : "object",
+            "default" : {},
+            "properties" : {
+                "y": {
+                }
+            },
+            "required": ["c"]
+        }
+    },
+    "required": ["a", "b", "z"]
+}
