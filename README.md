@@ -96,7 +96,7 @@ $ npm test
 
 
 
-Coverage : https://aminassian.github.io/json-schema-umbrella/coverage/index.html
+Coverage : http://aminassian.github.io/json-schema-umbrella/coverage/index.html
 
 Made by
 ------------------------------------------
@@ -110,7 +110,7 @@ If you like json-schema-umbrella and would like to support it, you are welcome t
 License
 ------------------------------------------
 
-[GPL-3.0](https://github.com/aminassian/json-schema-umbrella/blob/master/LICENSE)
+[GPL-3.0](https://github.com/aminassian/json-schema-umbrella/blob/master/LICENCE.txt)
 
 Logo : umbrella from [Font-Awesome](http://fortawesome.github.io/Font-Awesome/) (licence [SIL OFL 1.1](http://scripts.sil.org/OFL))
 
@@ -124,10 +124,10 @@ External libraries :
 Links
 ------------------------------------------
 
-- www : https://aminassian.github.io/json-schema-umbrella
-- www [fr] : https://aminassian.github.io/json-schema-umbrella/index.fr.html
-- coverage : https://aminassian.github.io/json-schema-umbrella/coverage/index.html
-- doc api : https://aminassian.github.io/json-schema-umbrella/api/index.html
+- www : http://aminassian.github.io/json-schema-umbrella
+- www [fr] : http://aminassian.github.io/json-schema-umbrella/index.fr.html
+- coverage : http://aminassian.github.io/json-schema-umbrella/coverage/index.html
+- doc api : http://aminassian.github.io/json-schema-umbrella/api/index.html
 - github : https://github.com/aminassian/json-schema-umbrella
 - issues : https://github.com/aminassian/json-schema-umbrella/issues
 - npm : https://www.npmjs.com/package/json-schema-umbrella
