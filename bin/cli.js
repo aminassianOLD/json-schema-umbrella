@@ -27,7 +27,7 @@
     var program = require('commander');
 
     program
-        .version('0.1.0-beta.2')
+        .version('0.1.0-beta.3')
         .option('-s, --schema [value]', 'file path to schema json v4')
         .option('-p, --pretty', 'pretty json', pretty, 0);
 

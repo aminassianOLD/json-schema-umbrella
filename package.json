@@ -1,6 +1,6 @@
 {
     "name": "json-schema-umbrella",
-    "version": "0.1.0-beta.2",
+    "version": "0.1.0-beta.3",
     "homepage": "https://aminassian.github.io/json-schema-umbrella",
     "description": "Analysis json-schema v4 and triggers warnings in the following case: unemployed required property, required property without default.",
     "author": { "name": "Alban Minassian" },
@@ -49,6 +49,7 @@
         "jsdoc": "*",
         "jshint": "*",
         "mocha": "*",
+        "jayschema": "*",
         "istanbul": "*",
         "yadda": "*"
     },
