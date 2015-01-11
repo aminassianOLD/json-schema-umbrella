@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // -*- coding: utf-8 -*-
 
 //
@@ -36,10 +37,10 @@
         console.log('    $ json-schema-umbrella --help');        console.log('    $ json-schema-umbrella --version');        console.log('    $ json-schema-umbrella --schema path/to/your.schema.json');        console.log('');
         console.log('  Links:');
         console.log('');
-        console.log('    - www : https://aminassian.github.com/json-schema-umbrella');
-        console.log('    - www [fr] : https://aminassian.github.com/json-schema-umbrella/index.fr.html');
-        console.log('    - coverage : https://aminassian.github.com/json-schema-umbrella/coverage/index.html');
-        console.log('    - doc api : https://aminassian.github.com/json-schema-umbrella/api/index.html');
+        console.log('    - www : https://aminassian.github.io/json-schema-umbrella');
+        console.log('    - www [fr] : https://aminassian.github.io/json-schema-umbrella/index.fr.html');
+        console.log('    - coverage : https://aminassian.github.io/json-schema-umbrella/coverage/index.html');
+        console.log('    - doc api : https://aminassian.github.io/json-schema-umbrella/api/index.html');
         console.log('    - github : https://github.com/aminassian/json-schema-umbrella');
         console.log('    - issues : https://github.com/aminassian/json-schema-umbrella/issues');
         console.log('    - npm : https://www.npmjs.com/package/json-schema-umbrella');

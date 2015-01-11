@@ -96,7 +96,7 @@ $ npm test
 
 
 
-Coverage : https://aminassian.github.com/json-schema-umbrella/coverage/index.html
+Coverage : https://aminassian.github.io/json-schema-umbrella/coverage/index.html
 
 Made by
 ------------------------------------------
@@ -124,10 +124,10 @@ External libraries :
 Links
 ------------------------------------------
 
-- www : https://aminassian.github.com/json-schema-umbrella
-- www [fr] : https://aminassian.github.com/json-schema-umbrella/index.fr.html
-- coverage : https://aminassian.github.com/json-schema-umbrella/coverage/index.html
-- doc api : https://aminassian.github.com/json-schema-umbrella/api/index.html
+- www : https://aminassian.github.io/json-schema-umbrella
+- www [fr] : https://aminassian.github.io/json-schema-umbrella/index.fr.html
+- coverage : https://aminassian.github.io/json-schema-umbrella/coverage/index.html
+- doc api : https://aminassian.github.io/json-schema-umbrella/api/index.html
 - github : https://github.com/aminassian/json-schema-umbrella
 - issues : https://github.com/aminassian/json-schema-umbrella/issues
 - npm : https://www.npmjs.com/package/json-schema-umbrella
