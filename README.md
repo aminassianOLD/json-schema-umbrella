@@ -11,8 +11,8 @@ Analysis json-schema v4 and triggers warnings in the following case:
 - unemployed required property
 - required property without default.
 
-[![video][video-image]]
-video-image]: https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/module.gif
+![video][video-image]
+[video-image]: https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/module.gif
 
 Installation
 ------------------------------------------
@@ -105,6 +105,8 @@ The original author of json-schema-umbrella is  [Alban Minassian](https://github
 
 If you like json-schema-umbrella and would like to support it, you are welcome to make a donation. It will surely be appreciated! Thanks!
 
+[![donate with your pledgie account][donate-image-pledgie]][donate-url-pledgie][![donate with your gratipay account][donate-image-gratipay]][donate-url-gratipay]
+
 License
 ------------------------------------------
 
@@ -147,7 +149,6 @@ Copyright © 2015 - Proudly Made In Nantes [![nantestech][nantestech-image]][nan
 
 [icon-image32x32]: https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/umbrella_000000_32.png
 [icon-image64x64]: https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/umbrella_000000_64.png
-[![donate with your pledgie account][donate-image-pledgie]][donate-url-pledgie][![donate with your gratipay account][donate-image-gratipay]][donate-url-gratipay]
 [donate-image-pledgie]: https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/pledgie32x32.png
 [donate-url-pledgie]: https://pledgie.com/campaigns/27813
 [donate-image-gratipay]: https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/gratipay32x32.png
