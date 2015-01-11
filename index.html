@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analysis json-schema v4 and triggers warnings in the following case: unemployed required property, required property without default.">
+    <title>json-schema-umbrella</title>    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/layouts/marketing.css">
+    <!--<![endif]-->
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/javascript.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/bash.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="index.html"><i class="fa fa-umbrella fa-lg"></i> json-schema-umbrella v0.1.0-beta.1</a>
+        <ul>
+            <li class="pure-menu-selected"><a lang="en" href="index.html" title="english">En</a></li>
+            <li class=""><a lang="fr" href="index.fr.html" title="français">Fr</a></li>
+            <li class=""><a lang="en" href="coverage/index.html" title="code coverage">Coverage</a></li>
+            <li class=""><a lang="en" href="api/index.html" title="documentation de l&#39;api">Api</a></li>
+            <li class=""><a lang="en" target="_blank" href="https://github.com/aminassian/json-schema-umbrella" title="view project on github"><i class="fa fa-github"></i>&nbsp;GitHub</a></li>
+            <li class=""><a lang="en" href="https://github.com/aminassian/json-schema-umbrella/zipball/master" title="Download .zip file"><i class="fa fa-file-zip-o"></i>&nbsp;.zip</a></li>
+            <li class=""><a lang="en" href="https://github.com/aminassian/json-schema-umbrella/tarball/master" title="Download .tar.gz file"><i class="fa fa-file-archive-o"></i>&nbsp;.tar.gz</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="content">
+        <div class="pure-g">
+
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Introduction
+                </h3>
+                <p>
+                    <p>Analysis json-schema v4 and triggers warnings in the following case:</p>
+<ul>
+<li>unemployed required property</li>
+<li>required property without default.</li>
+</ul>
+
+                    <img src="img/module.gif" alt="" title="">
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Installation
+                </h3>
+                <p>
+                    This package is available on <a lang="en" target="_blank" href="https://www.npmjs.com/package/json-schema-umbrella">npm</a> as: json-schema-umbrella
+                    <pre><code class="bash">$ npm install json-schema-umbrella -g
+$ npm install json-schema-umbrella --save</code></pre>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Cli
+                </h3>
+                <p>
+                    <pre><code class="bash">$ json-schema-umbrella --help
+$ json-schema-umbrella --version
+$ json-schema-umbrella --schema path/to/your.schema.json
+$ json-schema-umbrella --schema path/to/your.schema.json > result.json
+$ json-schema-umbrella --pretty --schema path/to/your.schema.json
+$ json-schema-umbrella --pretty --schema path/to/your.schema.json > result.json</code></pre>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Usage
+                </h3>
+                <p>
+                    <p>Param to function <code>umbrella.analyse</code> must repect schema <a href="https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/schema/analyse.in.schema.json">analyse.in.schema.json</a>. </p>
+
+                    <pre><code class="javascript">var umbrella = require('json-schema-umbrella');
+var yourSchema = { //
+    "properties": {
+        "a" : {
+            "type" : "string",
+        }
+    },
+    "required" : [
+        "b", // <=== "b" property not exist
+        "a" // <=== "a" property exist but without 'default' property
+    ]
+}
+var cautions = umbrella.analyse({"schema": yourSchema});</code></pre>
+                    <p><code>umbrella.analyse</code> return result which respect json-schema <a href="https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/schema/analyse.out.schema.json">analyse.out.schema.json</a>.</p>
+
+                    <pre><code class="javascript">{
+    "analyse": [
+        {
+            "code": "UNEMPLOYED_REQUIRED",
+            "message": "unemployed 'b' required",
+            "path": "/required"
+        },
+        {
+            "code": "MISSING_REQUIRED_DEFAULT",
+            "message": "'a' required as no default",
+            "path": "/required"
+        }
+    ],
+    "licence": "GPL-3.0",
+    "donate": [
+        "https://pledgie.com/campaigns/27813",
+        "https://gratipay.com/aminassian"
+    ]
+}</code></pre>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Test
+                </h3>
+                <p>
+                    To run the test suite, download the source code, install the dependencies and run `npm test`.
+                    <pre><code class="bash">$ git clone https://github.com/aminassian/json-schema-umbrella.git
+$ cd json-schema-umbrella
+$ npm install
+$ npm test</code></pre>
+                    
+                    Coverage : <a lang="en" href="coverage/index.html" title="code coverage">coverage/index.html</a>
+                </p>
+
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Made by
+                </h3>
+                <p>
+                    The original author of json-schema-umbrella is  <a target="_blank" href="https://github.com/aminassian">Alban Minassian</a>.
+                </p>
+                <p>
+                    If you like json-schema-umbrella and would like to support it, you are welcome to make a donation. It will surely be appreciated! Thanks!
+                </p>
+                <p>
+                                                            <a href="https://pledgie.com/campaigns/27813"><img src="https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/pledgie32x32.png" alt="donate with your pledgie account" title=""></a>
+                                        <a href="https://gratipay.com/aminassian"><img src="https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/gratipay32x32.png" alt="donate with your gratipay account" title=""></a>
+                    
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    License
+                </h3>
+                <p>
+                    <a target="_blank" href="https://github.com/aminassian/json-schema-umbrella/blob/master/LICENSE">GPL-3.0</a>.
+                </p>
+                <p>
+                    External libraries :
+                </p>
+                <p>
+                    <ul>
+                                                            <li>
+                        <a lang="en" target="_blank" href="http://underscorejs.org/">underscore.js</a>
+                        (<a lang="en" target="_blank" href="https://github.com/jashkenas/underscore/blob/master/LICENSE">license</a>)
+                    </li>
+                                        <li>
+                        <a lang="en" target="_blank" href="https://github.com/substack/js-traverse">js-traverse</a>
+                        (<a lang="en" target="_blank" href="https://github.com/substack/js-traverse/blob/master/LICENSE">license</a>)
+                    </li>
+                                        <li>
+                        <a lang="en" target="_blank" href="https://github.com/tj/commander.js">Commander.js</a>
+                        (<a lang="en" target="_blank" href="https://github.com/tj/commander.js">license</a>)
+                    </li>
+                    
+                    </ul>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Links
+                </h3>
+                <p>
+                    <ul>
+                                                <li>www : <a target="_blank" href="https://aminassian.github.com/json-schema-umbrella">https://aminassian.github.com/json-schema-umbrella</a></li>
+                                                <li>www [fr] : <a target="_blank" href="https://aminassian.github.com/json-schema-umbrella/index.fr.html">https://aminassian.github.com/json-schema-umbrella/index.fr.html</a></li>
+                                                <li>coverage : <a target="_blank" href="https://aminassian.github.com/json-schema-umbrella/coverage/index.html">https://aminassian.github.com/json-schema-umbrella/coverage/index.html</a></li>
+                                                <li>doc api : <a target="_blank" href="https://aminassian.github.com/json-schema-umbrella/api/index.html">https://aminassian.github.com/json-schema-umbrella/api/index.html</a></li>
+                                                <li>github : <a target="_blank" href="https://github.com/aminassian/json-schema-umbrella">https://github.com/aminassian/json-schema-umbrella</a></li>
+                                                <li>issues : <a target="_blank" href="https://github.com/aminassian/json-schema-umbrella/issues">https://github.com/aminassian/json-schema-umbrella/issues</a></li>
+                                                <li>npm : <a target="_blank" href="https://www.npmjs.com/package/json-schema-umbrella">https://www.npmjs.com/package/json-schema-umbrella</a></li>
+                                                                        <li>pledgie : <a target="_blank" href="https://pledgie.com/campaigns/27813">https://pledgie.com/campaigns/27813</a></li>
+                                                <li>gratipay : <a target="_blank" href="https://gratipay.com/aminassian">https://gratipay.com/aminassian</a></li>
+                                            </ul>
+                </p>
+            </div>
+            <div class="l-box pure-u-1">
+                <h3 class="content-subhead">
+                    <!--<i class="fa fa-mobile"></i>-->
+                    Release Notes
+                </h3>
+                <p>
+                    <ul>
+                                                    <li>0.1.0-beta.1 (2015/01/11):</li>
+                            <ul>
+                                                                    <li>[init] This is the first beta public of json-schema-umbrella</li>
+                                                            </ul>
+                                            </ul>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer l-box is-center">
+        Copyright © 2015 -  Proudly Made In Nantes <a lang="fr" target="_blank" href="http://www.nantestech.com"><img src="img/NANTES-TECH-LOGO-BLANC-HOR.png" alt="" title=""></a>
+    </div>
+
+</div>
+</body>
+</html>
