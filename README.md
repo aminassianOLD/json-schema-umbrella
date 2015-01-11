@@ -146,7 +146,7 @@ Release Notes
 
 ------------------------------------------
 
-Copyright © 2015 - Proudly Made In Nantes [![nantestech][nantestech-image]][nantestech-url] 
+Copyright © 2015 - Proudly Made In Nantes [![nantestech][nantestech-image]][nantestech-url]
 [nantestech-image]: https://raw.githubusercontent.com/aminassian/json-schema-umbrella/master/img/NANTES-TECH-LOGO-NOIR-HOR.png
 [nantestech-url]: http://www.nantestech.com
 
