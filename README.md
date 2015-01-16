@@ -1,6 +1,10 @@
-[![npm package version][badge-image-npm-package-version]][badge-url-npm-package-version][![npm package count download][badge-image-npm-package-count-download]][badge-url-npm-package-count-download][![travis status][badge-image-travis-build]][badge-url-travis-build][![coveralls status][badge-image-coveralls]][badge-url-coveralls]
+[![npm package version][badge-image-npm-package-version]][badge-url-npm-package-version]
+[![npm package count download][badge-image-npm-package-count-download]][badge-url-npm-package-count-download]
+[![travis status][badge-image-travis-build]][badge-url-travis-build]
+[![coveralls status][badge-image-coveralls]][badge-url-coveralls]
 
-![json-schema-umbrella][icon-image64x64] json-schema-umbrella v0.1.0-beta.3
+
+![json-schema-umbrella][icon-image64x64] json-schema-umbrella v0.1.0-beta.4
 =================================================
 
 Introduction
@@ -137,12 +141,8 @@ Links
 Release Notes
 ------------------------------------------
 
-- 0.1.0-beta.1 (2015/01/11):
+- 0.1.0-beta.4 (2015/01/11):
     - ``init`` This is the first beta public of json-schema-umbrella
-- 0.1.0-beta.2 (2015/01/11):
-    - ``update`` fix npm cli error, add missing dot file and fix www url
-- 0.1.0-beta.3 (2015/01/11):
-    - ``update`` fix missing jayschema package
 
 ------------------------------------------
 
